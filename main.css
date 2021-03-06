@@ -1,0 +1,34 @@
+html{
+    overflow: hidden;
+}
+
+body{
+    background: darkcyan;
+}
+
+*{
+    color: white;
+}
+
+.centered{
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 92vh;
+    cursor: default;
+}
+
+.nav-menu{
+    right: 0;
+    position: fixed;
+    z-index: 500;
+}
+.nav{
+    display: inline-block;
+    margin: 0 .1vw;
+}
+.nav.t{
+    text-decoration: underline;
+    cursor: pointer;
+}
