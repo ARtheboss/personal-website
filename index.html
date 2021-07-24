@@ -1,23 +1,95 @@
 <!DOCTYPE html>
-<html onselectstart="return false">
+<html>
 <head>
     <title>Advay Ratan</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/fec662e93c.js"></script>
     <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class='nav-menu'>
-        <div class='nav t'>Home</div>
+    <canvas id='background-canvas' width='1500' height='1000'></canvas>
+    <div class='nav-menu' style='left: 1vw;'>
+        <a class='nav active' id='home-nav' onClick="scrollToElement('home-page')">Home</a>
         <div class='nav'>/</div>
-        <div class='nav t'>About</div>
+        <a class='nav' id='about-nav' onClick="scrollToElement('about-page')">About</a>
         <div class='nav'>/</div>
-        <div class='nav t'>Projects</div>
+        <a class='nav' id='projects-nav' onClick="scrollToElement('projects-page')">Projects</a>
         <div class='nav'>/</div>
-        <div class='nav t'>Contact</div>
-        <div class='nav t'></div>
+        <a class='nav' id='contact-nav' onClick="scrollToElement('contact-page')">Contact</a>
+        <div class='nav'></div>
     </div>
-    <div class='centered'>
-        <h1>Advay Ratan</h1>
+    <div class='nav-menu' style='right: 0;'>
+        <a class='nav' href='https://www.linkedin.com/in/advay-ratan/' target='_blank'><i class='fa fa-linkedin-square' aria-hidden='true'></i></a>
+        <div class='nav'>/</div>
+        <a class='nav' href='https://github.com/ARtheboss' target='_blank'><i class='fa fa-github-square' aria-hidden='true'></i></a>
+        <div class='nav'>/</div>
+        <a class='nav' href='https://www.instagram.com/advay_ratan/' target='_blank'><i class='fa fa-instagram' aria-hidden='true'></i></a>
+        <div class='nav'>/</div>
+        <a class='nav' href='https://www.instagram.com/advayronguitar/' target='_blank'><i class='fa fa-instagram' aria-hidden='true'></i></a>
+        <div class='nav'></div>
     </div>
-    <script src="main.js"></script>
+    <div class='page' id='home-page'>
+        <div class="centered">
+            <h1 id='name'>Advay Ratan</h1>
+            <h3>High School Senior / Coder / Guitarist</h3>
+        </div>
+    </div>
+    <div class='page' id='about-page'>
+        <h1>About</h1>
+        <p>Welcome to my website! I'm Advay and I'm currently a senior at Singapore American School</p>
+        <p>I'm passionate about technology and programming</p>
+        <h3>Skills</h3>
+        <h4>Programming</h4>
+        <ul>
+        <li>Proficient in C++ and Python, know Java, C#</li>
+        <li>Web development, including
+            <ul>
+                <li>HTML, CSS, Javascript</li>
+                <li>VueJS</li>
+                <li>PHP, SQL</li>
+                <li>Django (Python) Some knowledge of AWS
+            </ul>
+        </li>
+        <li>App development, including
+            <ul>
+                <li>Flutter/Dart</li>
+                <li>Android Studio/Java/Kotlin</li>
+            </ul>
+        </li>
+        <li>Game development
+            <ul>
+                <li>HTML5 Canvas</li>
+                <li>Unity</li>
+            </ul>
+        </li>
+        <li>Competitive Programming
+            <ul>
+                <li>Graph theory, greedy algorithms, dynamic programming etc.
+                <li><a href='https://usaco.org' target="_blank">USACO</a> Gold</li>
+            </ul>
+        </li>
+        </ul>
+    </div>
+    <div class='page' id='projects-page'>
+        <h1>Projects</h1>
+        <div id='card-container'>
+            <div class='card'>
+                <div class='card-header'>
+                    <a href='https://chrome.google.com/webstore/detail/time-trial-racing/phfhalhmobjblhoajagaeodhofnopcbm?hl=en' target='_blank'>Time Trial Racing</a>
+                </div>
+                <img class='card-image' src='https://lh3.googleusercontent.com/h1EeCBv0GYfVqTYszcePhTBFCiHO2Rm5MOazW_37TcgvXL-1a8t-U86dXVvDip4NN-w8b_sdi_lkXtInMxQ3o4cj=w640-h400-e365-rj-sc0x00ffffff'>
+                <div class='card-body'>
+                    2D top-down single-player racer published on Chrome Web Store. Made in HTML5 canvas with independently created physics.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='page' id='contact-page'>
+        <h1>Contact</h1>
+    </div>
 </body>
 </html>
