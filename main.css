@@ -21,7 +21,7 @@ body{
 
 .nav-menu{
     position: fixed;
-    z-index: 500;
+    z-index: 50;
 }
 .nav{
     display: inline-block;
@@ -43,6 +43,7 @@ a.nav.active{
 
 canvas{
     position: fixed;
+    z-index: 5;
 }
 .name-letter{
     display: inline-block;
@@ -74,13 +75,64 @@ h3{
     font-weight: 400;
     color: #61c4ff;
 }
-
+#card-container{
+    overflow-y: scroll;
+    height: 80vh;
+}
 .card{
     display: inline-block;
-    height: 20vh;
-    width: 20vw;
+    width: 250px;
+    background: black;
+    height: 215px;
+    padding: 8px;
+    position: relative;
+    vertical-align: top;
 }
 .card-image{
-    width: 20vw;
-    height: 15vh;
+    height: 170px;
+    cursor: inherit;
+}
+.card-header{
+    text-align: center;
+    position: relative;
+    z-index: 100;
+    color: #61c4ff;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    width: 250px;
+    justify-content: center;
+}
+.card-header a{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: inherit;
+    cursor: inherit;
+}
+.card-header:hover{
+    color: #41a4df;
+}
+.card-button{
+    z-index: 100;
+    position: absolute;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    background: #61c4ff;
+    color: white;
+    width: 250px;
+    font-family: 'Roboto', sans-serif;
+    bottom: 4px;
+}
+.card-button:hover{
+    background: #41a4df;
+}
+.card-back{
+    display: none;
+}
+.card-description{
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
 }

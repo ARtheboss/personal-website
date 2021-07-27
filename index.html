@@ -41,7 +41,7 @@
     <div class='page' id='about-page'>
         <h1>About</h1>
         <p>Welcome to my website! I'm Advay and I'm currently a senior at Singapore American School</p>
-        <p>I'm passionate about technology and programming</p>
+        <p>I'm passionate about technology and programming.</p>
         <h3>Skills</h3>
         <h4>Programming</h4>
         <ul>
@@ -77,19 +77,30 @@
     <div class='page' id='projects-page'>
         <h1>Projects</h1>
         <div id='card-container'>
-            <div class='card'>
-                <div class='card-header'>
-                    <a href='https://chrome.google.com/webstore/detail/time-trial-racing/phfhalhmobjblhoajagaeodhofnopcbm?hl=en' target='_blank'>Time Trial Racing</a>
+            <div class='card' id='0-card'>
+                <div class='card-front'>
+                    <div class='card-header'>
+                        <a href='https://chrome.google.com/webstore/detail/time-trial-racing/phfhalhmobjblhoajagaeodhofnopcbm?hl=en' target='_blank'>Time Trial Racing</a>
+                        <img class='card-image' src='https://lh3.googleusercontent.com/h1EeCBv0GYfVqTYszcePhTBFCiHO2Rm5MOazW_37TcgvXL-1a8t-U86dXVvDip4NN-w8b_sdi_lkXtInMxQ3o4cj=w640-h400-e365-rj-sc0x00ffffff'>
+                    </div>
+                    <button class='card-button' onClick="showBack(0)">Details</button>
                 </div>
-                <img class='card-image' src='https://lh3.googleusercontent.com/h1EeCBv0GYfVqTYszcePhTBFCiHO2Rm5MOazW_37TcgvXL-1a8t-U86dXVvDip4NN-w8b_sdi_lkXtInMxQ3o4cj=w640-h400-e365-rj-sc0x00ffffff'>
-                <div class='card-body'>
-                    2D top-down single-player racer published on Chrome Web Store. Made in HTML5 canvas with independently created physics.
+                <div class='card-back'>
+                    <div class='card-header'>
+                        <a href='https://chrome.google.com/webstore/detail/time-trial-racing/phfhalhmobjblhoajagaeodhofnopcbm?hl=en' target='_blank'>Time Trial Racing</a>
+                    </div>
+                    <div class='card-description'>
+                        2D top-down single-player racer published on Chrome Web Store. Made in HTML5 canvas with independently created physics.
+                    </div>
+                    <button class='card-button' onClick="showFront(0)">Back</button>
                 </div>
             </div>
         </div>
     </div>
     <div class='page' id='contact-page'>
         <h1>Contact</h1>
+        <p>Email: advayratan@gmail.com</p>
+        <p>More links in top right corner</p>
     </div>
 </body>
 </html>
