@@ -133,7 +133,7 @@ $(document).ready(function(){
         $(this).html(html);
     });
 
-    var activePage = "projects-page";
+    var activePage = "home-page";
     scrollToElement(activePage);
     $(document).on("scroll", function(){
         var wh = $(window).height();
