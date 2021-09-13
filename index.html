@@ -17,7 +17,7 @@
         <div class='nav'>/</div>
         <a class='nav' id='about-nav' onClick="scrollToElement('about-page')">About</a>
         <div class='nav'>/</div>
-        <a class='nav' id='projects-nav' onClick="scrollToElement('projects-page')">Projects</a>
+        <a class='nav' id='projects-nav' onClick="scrollToElement('projects-page')">Portfolio</a>
         <div class='nav'>/</div>
         <a class='nav' id='contact-nav' onClick="scrollToElement('contact-page')">Contact</a>
         <div class='nav'></div>
@@ -37,70 +37,193 @@
             <h1 id='name'>Advay Ratan</h1>
             <h3>High School Senior / Coder / Guitarist</h3>
         </div>
+        <div class='down-arrow fa fa-chevron-down '></div>
     </div>
     <div class='page' id='about-page'>
-        <h1>About</h1>
-        <p>Welcome to my website! I'm Advay and I'm currently a senior at Singapore American School</p>
-        <p>I'm passionate about technology and programming.</p>
-        <h3>Skills</h3>
-        <h4>Programming</h4>
-        <ul>
-        <li>Proficient in C++ and Python, know Java, C#</li>
-        <li>Web development, including
-            <ul>
-                <li>HTML, CSS, Javascript</li>
-                <li>VueJS</li>
-                <li>PHP, SQL</li>
-                <li>Django (Python) Some knowledge of AWS
-            </ul>
-        </li>
-        <li>App development, including
-            <ul>
-                <li>Flutter/Dart</li>
-                <li>Android Studio/Java/Kotlin</li>
-            </ul>
-        </li>
-        <li>Game development
-            <ul>
-                <li>HTML5 Canvas</li>
-                <li>Unity</li>
-            </ul>
-        </li>
-        <li>Competitive Programming
-            <ul>
-                <li>Graph theory, greedy algorithms, dynamic programming etc.
-                <li><a href='https://usaco.org' target="_blank">USACO</a> Gold</li>
-            </ul>
-        </li>
-        </ul>
+        <div class='centered' style='width: 50%; margin-left: 25%;'>
+            <h1>About</h1>
+            <h3>Hi! Welcome to my website.</h3>
+            <p>I first started "coding" in elementary school, when I was exposed to Scratch.<br>
+            Ever since then, I've fallen in love with the field. I've explored what can be done by picking up many different languages and creatively implementing computer science solutions to my problems, some of which are described in the Portfolio section of this website. I love the ways in which computer science lets me convert my imagination to reality. Contact me if you need help converting yours.
+            <br><br>A second love of mine is guitar. I started learning in 2011, and initially was too young to like it. But ever since 2017 after I got my first electric guitar, it has blossomed into an important hobby of mine.</p>
+        </div>
     </div>
     <div class='page' id='projects-page'>
-        <h1>Projects</h1>
-        <div id='card-container'>
-            <div class='card' id='0-card'>
-                <div class='card-front'>
-                    <div class='card-header'>
-                        <a href='https://chrome.google.com/webstore/detail/time-trial-racing/phfhalhmobjblhoajagaeodhofnopcbm?hl=en' target='_blank'>Time Trial Racing</a>
-                        <img class='card-image' src='https://lh3.googleusercontent.com/h1EeCBv0GYfVqTYszcePhTBFCiHO2Rm5MOazW_37TcgvXL-1a8t-U86dXVvDip4NN-w8b_sdi_lkXtInMxQ3o4cj=w640-h400-e365-rj-sc0x00ffffff'>
+        <div class='page-header'>
+            <div class='centered'>
+                <h1>Portfolio</h1>
+                <h3>What exactly I mean by High School Senior, Coder, and Guitarist</h3>
+            </div>
+        </div>
+        <div class='page-body'>
+            <div class='about-block'>
+                <div class='about-block-title'>High School Senior</div>
+                <div class='about-content'>
+                    <div class='about-info-tile' style='grid-row: 3; grid-column: 1 / 3;'>
+                        <span class='front'>
+                            <div class='front-title'>
+                                <h3>U.W. GPA</h3>
+                            </div>
+                        </span>
+                        <span class='back'>
+                            <h4>4.0</h4>
+                        </span>
                     </div>
-                    <button class='card-button' onClick="showBack(0)">Details</button>
+                    <div class='about-info-tile' style='grid-row: 1; grid-column: 5;'>
+                        <span class='front'>
+                            <div class='front-title'>
+                                <h3>SAT</h3>
+                            </div>
+                        </span>
+                        <span class='back'>
+                            <h4>1600</h4>
+                        </span>
+                    </div>
+                    <div class='about-info-tile' style='grid-row: 1 / 3; grid-column: 1 / 3;'>
+                        <span class='front'>
+                            <div class='front-title'>
+                                <h3>High<br>School</h3>
+                            </div>
+                        </span>
+                        <span class='back'>
+                            <img height="140" src="https://d2y7px9frthmrj.cloudfront.net/cache/1600x600/static/images/schools/covers/sas-logo-2-dbKhTNf.png">
+                        </span>
+                    </div>
+                    <div class='about-info-tile' style='grid-row: 1; grid-column: 3 / 5;'>
+                        <span class='front'>
+                            <div class='front-title'>
+                                <h3>SAT Math 2</h3>
+                            </div>
+                        </span>
+                        <span class='back'>
+                            <h4>800</h4>
+                        </span>
+                    </div>
+                    <div class='about-info-tile' style='grid-row: 2 / 4; grid-column: 3 / 6;'>
+                        <span class='front'>
+                            <div class='front-title'>
+                                <h3>AP Scores</h3>
+                            </div>
+                        </span>
+                        <span class='back'>
+                            <table>
+                                <tr>
+                                    <td>AP Calculus AB</td><td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>AP Calculus BC</td><td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>AP Chemistry</td><td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>AP English Language and Composition</td><td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>AP Macroeconomics</td><td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>AP Microeconomics</td><td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>AP Physics 1</td><td>5</td>
+                                </tr>
+                            </table>
+                        </span>
+                    </div>
+                    <div class='about-info-tile' style='grid-row: 4; grid-column: 1;'>
+                        <span class='front'>
+                            <div class='front-title'>
+                                <h3>Competitive Coding Club</h3>
+                                <h4>Founder/President</h4>
+                            </div>
+                        </span>
+                        <span class='back'>
+                            <p>Founded this club to help students learn competitive programming (~10 members). Represented the school to win awards at regional/international competitions (NOI, WCC).</p>
+                        </span>
+                    </div>
+                    <div class='about-info-tile' style='grid-row: 4; grid-column: 2 / 4;'>
+                        <span class='front'>
+                            <div class='front-title'>
+                                <h3>Computer Science Honor Society</h3>
+                                <h4>President</h4>
+                            </div>
+                        </span>
+                        <span class='back'>
+                            <p>Through CSHS we conduct review sessions for classes, plans our own events including hackathons, and tutor students in our school to learn programming languages.</p>
+                        </span>
+                    </div>
+                    <div class='about-info-tile' style='grid-row: 5 / 8; grid-column: 1 / 6;'>
+                        <span class='front'>
+                            <div class='front-title'>
+                                <h3>Science National Honor Society</h3>
+                                <h4>Vice-President</h4>
+                            </div>
+                        </span>
+                        <span class='back'>
+                            <p>Elected to be officer of the honor society. Managed about 100 members and created service opportunities (tutoring, writing lessons etc.) to help school's science classes.</p>
+                        </span>
+                    </div>
+                    <div class='about-info-tile' style='grid-row: 4; grid-column: 4 / 6;'>
+                        <span class='front'>
+                            <div class='front-title'>
+                                <h3>Student Council</h3>
+                                <h4>Grade Representative</h4>
+                            </div>
+                        </span>
+                        <span class='back'>
+                            <p>A student council grade representative - worked mainly on planning activities and "government", which is synthesizing and representing student voice to admin.</p>
+                        </span>
+                    </div>
                 </div>
-                <div class='card-back'>
-                    <div class='card-header'>
-                        <a href='https://chrome.google.com/webstore/detail/time-trial-racing/phfhalhmobjblhoajagaeodhofnopcbm?hl=en' target='_blank'>Time Trial Racing</a>
+            </div>
+            <div class='about-block'>
+                <div class='about-block-title'>Coder</div>
+                <div class='about-content' id='code-about-block' style='grid-template-columns: repeat(3, 1fr);'></div>
+            </div>
+            <div class='about-block'>
+                <div class='about-block-title'>Guitarist</div>
+                <div class='about-content'>
+                    <div class='about-info-tile' style='grid-row: 1; grid-column: 1 / 3;'>
+                        <span class='front'>
+                            <div class='front-title'>
+                                <h3>Instagram</h3>
+                            </div>
+                        </span>
+                        <span class='back'>
+                            <h4>@advayronguitar</h4>
+                        </span>
                     </div>
-                    <div class='card-description'>
-                        2D top-down single-player racer published on Chrome Web Store. Made in HTML5 canvas with independently created physics.
+                    <div class='about-info-tile' style='grid-row: 2; grid-column: 1;'>
+                        <span class='front'>
+                            <div class='front-title'>
+                                <h3>Trinity</h3>
+                            </div>
+                        </span>
+                        <span class='back'>
+                            <p>Passed Guitar Rock and Pop Examination Grade 8 with Distinction</p>
+                        </span>
                     </div>
-                    <button class='card-button' onClick="showFront(0)">Back</button>
+                    <div class='about-info-tile' style='grid-row: 2; grid-column: 2;'>
+                        <span class='front'>
+                            <div class='front-title'>
+                                <h3>ABRSM</h3>
+                            </div>
+                        </span>
+                        <span class='back'>
+                            <p>Passed Classical Guitar Grade 5 with Merit</p>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class='page' id='contact-page'>
-        <h1>Contact</h1>
-        <p>Email: advayratan@gmail.com</p>
-        <p>More links in top right corner</p>
+        <div class='centered' style='width: 50%; margin-left: 25%;'>
+            <h1>Contact</h1>
+            <h3>advayratan@gmail.com</h3>
+            <p>More links in the top right corner.</p>
+        </div>
     </div>
 </body>
 </html>

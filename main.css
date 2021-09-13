@@ -14,9 +14,27 @@ body{
 
 .centered{
     position: relative;
-    top: 41%;
+    top: 38%;
     width: 100%;
     text-align: center;
+    z-index: 100;
+    height: 50vh;
+}
+.centered .name-letter{
+    font-size: 8vh;
+}
+.centered h3{
+    font-size: 3vh;
+}
+
+.down-arrow{
+    position: absolute;
+    bottom: 1vh;
+    font-size: 4vh;
+    text-align: center;
+    width: 100%;
+    z-index: 100;
+    cursor: pointer;
 }
 
 .nav-menu{
@@ -28,9 +46,10 @@ body{
     margin: 0 .1vw;
     cursor: pointer;
     font-family: sans-serif;
+    font-size: 2.3vh;
 }
 a.nav:hover, i:hover{
-    color: #61c4ff;
+    color: #2699de;
     cursor: pointer;
 }
 a.nav{
@@ -38,12 +57,12 @@ a.nav{
 }
 a.nav.active{
     font-weight: 800;
-    color: #61c4ff;
+    color: #2699de;
 }
 
 canvas{
     position: fixed;
-    z-index: 5;
+    z-index: -100;
 }
 .name-letter{
     display: inline-block;
@@ -53,16 +72,174 @@ canvas{
     height: 40px;
 }
 .name-letter:hover{
-    color: #61c4ff;
+    color: #2699de;
     transform: scale(1, .9);
 }
 
 .page{
-    width: 60vw;
-    margin-left: 20vw;
+    width: 80vw;
+    margin-left: 10vw;
     height: 94vh;
-    display: block;
+    display: flex;
     padding-top: 4vh;
+    position: relative;
+}
+.page-header{
+    flex: 25%;
+}
+.page-header h1{
+    text-align: left;
+    margin: 0;
+}
+.page-header h3{
+    text-align: left;
+    margin: 0;
+    font-size: 2.2vh;
+    margin-right: 2vw;
+}
+.page-body{
+    flex: 75%;
+    position: relative;
+}
+.about-block{
+    padding: 2vh 1vw;
+    border-left: #2699de solid .2vw;
+    margin-bottom: 3vh;
+    cursor: pointer;
+    position: relative;
+    z-index: 100;
+}
+.about-block-title{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 3vh;
+    cursor: pointer;
+    margin-bottom: 1vh;
+}
+.about-info-cont-body{
+    display: none;
+}
+.about-info-container{
+    background: #2699de;
+    transition: all .1s ease-in-out;
+}
+.about-info-container:hover{
+    background: white;
+}
+.about-info-container:hover .about-info-cont-body{
+    display: block;
+}
+.about-info-container:hover .about-info-cont-fac{
+    display: none;
+}
+
+.about-content{
+    display: none;
+    overflow-y: scroll;
+    height: 62vh;
+}
+.about-content::-webkit-scrollbar {
+    display: none;
+}
+
+.about-info-tile{
+    display: inline-block;
+    padding: 1vh;
+    position: relative;
+    background: linear-gradient(to left, #2699de 50%, white 50%);
+    background-size: 200% 100%;
+    transition: all .2s ease;
+    background-position: right bottom;
+    margin: .4vh;
+    vertical-align: top;
+}
+.front img{
+    min-width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 101;
+    text-align: center;
+    opacity: 0.2;
+    display: block;
+}
+.about-info-tile .front{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display:flex;
+    align-items: center;
+    z-index: 100;
+    overflow: hidden;
+}
+.about-info-tile:hover .front{
+    display: none;
+}
+.about-info-tile .back{
+    visibility: hidden;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.about-info-tile:hover .back{
+    visibility: visible;
+}
+.about-info-tile:hover{
+    background-position: left bottom;
+}
+.about-info-tile .front-title{
+    margin-left: .7vw;
+    border-left: solid white .2vw;
+    padding: 0 0 0 .7vw;
+    z-index: 102;
+}
+.front-title h3{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 2.7vh;
+    margin: 0;
+    vertical-align: middle;
+}
+.front-title h4{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 2vh;
+    margin: 0; 
+    vertical-align: middle;
+}
+.about-info-tile h2{
+    margin: 0;
+    font-family: Tahoma, sans-serif; 
+    font-weight: 400;
+}
+.about-info-tile .back h4{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 4vh;
+    margin: 0;
+    color: #2699de;
+}
+.about-info-tile p{
+    font-family: 'Georgia', serif;
+    color: #2699de;
+}
+.about-info-tile a{
+    display: inline-block;
+    margin: .5vh;
+    padding: .5vh;
+    background: #2699de;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+}
+.about-info-tile td{
+    color: #2699de;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1{
@@ -73,7 +250,12 @@ h1{
 h3{
     font-family: 'Georgia', serif;
     font-weight: 400;
-    color: #61c4ff;
+    color: #2699de;
+}
+p{
+    font-family: 'Roboto', serif;
+    font-size: 1.2vw;
+    color: white;
 }
 #card-container{
     overflow-y: scroll;
@@ -96,7 +278,7 @@ h3{
     text-align: center;
     position: relative;
     z-index: 100;
-    color: #61c4ff;
+    color: #2699de;
     cursor: pointer;
     overflow: hidden;
     display: flex;
@@ -119,7 +301,7 @@ h3{
     border: none;
     cursor: pointer;
     text-align: center;
-    background: #61c4ff;
+    background: #2699de;
     color: white;
     width: 250px;
     font-family: 'Roboto', sans-serif;

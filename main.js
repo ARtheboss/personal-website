@@ -13,8 +13,15 @@ const projectData = [
     {
         "title": "Time Trial Racing", 
         "link": "https://chrome.google.com/webstore/detail/time-trial-racing/phfhalhmobjblhoajagaeodhofnopcbm?hl=en", 
-        "image": "https://lh3.googleusercontent.com/h1EeCBv0GYfVqTYszcePhTBFCiHO2Rm5MOazW_37TcgvXL-1a8t-U86dXVvDip4NN-w8b_sdi_lkXtInMxQ3o4cj=w640-h400-e365-rj-sc0x00ffffff",
+        "image": "https://lh3.googleusercontent.com/e0ONEoXMZO3cldgXZdZNKjkWVMFVZfeCUlfV4JYxuHHYdfE9H7nDf_fgudPZKMSngHVGvrgPVq4PpLueszD2v1rx9A=w128-h128-e365",
         "description": "2D top-down single-player racer published on Chrome Web Store. Made in HTML5 canvas with independently created physics.",
+    },
+    {
+        "title": "Nugit", 
+        "position": "Software Engineering Intern",
+        "link": "https://nugit.co/", 
+        "image": "https://www.datocms-assets.com/6862/1534928447-favicon256.png",
+        "description": "Interviewed and obtained a paid internship during summer and worked on building data pipelines with Apache Airflow that pulled big data from APIs to be aggregated and presented in visual forms.",
     },
     {
         "title": "House SAS", 
@@ -31,7 +38,7 @@ const projectData = [
     {
         "title": "Productive New Tab", 
         "link": "https://chrome.google.com/webstore/detail/productivity-new-tab/dnnaopiaolaelpmcefbloemfnlhcdjlm?hl=en&authuser=2", 
-        "image": "https://lh3.googleusercontent.com/7wMKlNlo7XGLoORsfQ5jD5ouZBD7ZdUnXvLB6DppVKk-nOHThzEsAfv0Z0iKqNH_XkDnM9qdwa5POWpxrUG-Hm9EVQ=w640-h400-e365-rj-sc0x00ffffff",
+        "image": "https://lh3.googleusercontent.com/Q2ZuQ3aJ8Dm3eBtg9UAKB7w9eACvru0YtBVf0tvDMQuKIS7wvFZDJshBBjHDe_sLFKNuR-Pv_0zll87CX3fzYfE9=w128-h128-e365",
         "description": "A modular new tab primarily designed for myself. Includes a todo list, variable backgrounds, variable color themes, a reading list, notes, and more. Plan on expanding it to allow any users to add tools in the future.",
     },
     {
@@ -78,6 +85,9 @@ const projectData = [
     },
 ]
 
+const nextPages = {"home-page": "about-page", "about-page": "projects-page", "projects-page": "contact-page"};
+const prevPages = {"about-page": "home-page", "projects-page": "about-page", "contact-page": "projects-page"};
+
 function showBack(i){
     var frontSelector = "#" + i + "-card > div.card-front";
     var backSelector = "#" + i + "-card > div.card-back";
@@ -96,6 +106,7 @@ $(document).ready(function(){
 
     var projectHtml = "";
     projectData.forEach(function(data, i){
+        /*
         projectHtml += `
         <div class='card' id='`+i+`-card'>
             <div class='card-front'>
@@ -115,9 +126,26 @@ $(document).ready(function(){
                 <div class='card-description'>`+data['description']+`</div>
                 <button class='card-button' onClick="showFront(`+i+`)">Back</button>
             </div>
-        </div>`;
+        </div>`;*/
+        projectHtml += `
+        <div class='about-info-tile'>
+        <span class='front'>
+            <img src=` + data['image'] + `>
+            <div class='front-title'>
+                <h3>`+ data['title'] +`</h3>`
+        if("position" in data) projectHtml += "<h4>" + data['position'] + "</h4>";
+        projectHtml += `</div>
+        </span>
+        <span class='back'>
+            <p>`+ data['description'] +`
+            <br>
+            <a href='`+data['link']+`' target='_blank'>Open <i class='fa fa-external-link'></i></a>
+            </p>
+        </span>
+        </div>
+        `;
     });
-    $("#card-container").html(projectHtml);
+    $("#code-about-block").html(projectHtml);
 
     var pages = [];
     $(".page").each(function(){
@@ -177,9 +205,12 @@ $(document).ready(function(){
     canvas.style.height = document.body.offsetWidth;
 
     var trail = [];
+    var shooting_star_points = [];
+    var stars = [];
     var loop = 0;
     var x = 0;
     var y = 0;
+    var shift_pressed = false;
     document.onmousemove = handleMouseMove;
     function handleMouseMove(event) {
         x = event.clientX - 9;
@@ -200,18 +231,38 @@ $(document).ready(function(){
     function resizeCanvas() {
         clearInterval(animationInterval);
         canvas.width = document.body.offsetWidth;
-        canvas.height = document.body.offsetHeight;
+        canvas.height = document.body.offsetHeight * 5/16;
+        simulateStarFill();
         animationInterval = drawComponents();
+    }
+    function simulateStarFill(){
+        var loop = 0, nodeletes = true;
+        while(nodeletes){
+            for(var i = 0; i < stars.length; i++){
+                if(stars[i].y < 0){
+                    stars.splice(i, 1);
+                    i--;
+                    nodeletes = false;
+                }else{
+                    stars[i].y -= stars[i].v;
+                }
+            }
+            if(loop % 5 == 0){
+                stars.push({"x": Math.random() * canvas.width, "y": canvas.height, "v": Math.random()/4 + 0.25, "size": (Math.random() + 0.5) * 4});
+            }
+            loop++;
+        }
     }
     function drawComponents(){
         ctx = canvas.getContext('2d');
         ctx.strokeStyle = "#61c4ff"//"#ffbb00";
-        ctx.fillStyle = "gray";
         ctx.lineJoin = "round";
+        ctx.lineWidth = 3;
         return setInterval(function(){
+            ctx.fillStyle = "gray";
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             trail.push({"x": x, "y": y});
-            while(trail.length > 10){
+            while(trail.length > 10 && !shift_pressed){
                 trail.splice(0, 1);
             }
             ctx.beginPath();
@@ -222,9 +273,64 @@ $(document).ready(function(){
                 ctx.quadraticCurveTo(trail[i].x, trail[i].y, xc, yc)
             }
             if(trail.length > 2) ctx.quadraticCurveTo(trail[i].x, trail[i].y, trail[i+1].x, trail[i+1].y)
-            ctx.fillRect(x - 2, y - 2, 4, 4);
+            ctx.fillRect(x - 3, y - 3, 6, 6);
             ctx.stroke();
             loop++;
+            /*
+            for(var i = 0; i < shooting_star_points.length; i++){
+                ctx.beginPath();
+                ctx.moveTo(shooting_star_points[i].x, shooting_star_points[i].y);
+                ctx.lineTo(shooting_star_points[i].x - 100, shooting_star_points[i].y - 50);
+                ctx.stroke();
+                shooting_star_points[i].x += 10;
+                shooting_star_points[i].y += 5;
+            }
+            if(loop % 10 == 0) shooting_star_points.push({"x": Math.random() * 100 - 100, "y": Math.random() * 100 - 100})
+            */
+            ctx.fillStyle = "white";
+            for(var i = 0; i < stars.length; i++){
+                if(stars[i].y < 0){
+                    stars.splice(i, 1);
+                    i--;
+                }else{
+                    ctx.fillRect(stars[i].x, stars[i].y, stars[i].size, stars[i].size);
+                    stars[i].y -= stars[i].v;
+                }
+            }
+            if(loop % 5 == 0){
+                stars.push({"x": Math.random() * canvas.width, "y": canvas.height, "v": Math.random()/4 + 0.25, "size": (Math.random() + 0.5) * 4});
+            }
         }, 1000/60);
     }
+
+    $(".about-block").on("click", function(){
+        $(".about-content").css("display", "none");
+        $(this).find(".about-content").eq(0).css("display", "grid");
+    });
+
+    $(".down-arrow").on("click", function(){
+        activePage = "about-page";
+        scrollToElement(activePage);
+    });
+
+    $("body").on("keydown", function(e){
+        if(e.key === "Shift") shift_pressed = true;
+    });
+    $("body").on("keyup", function(e){
+        if(e.key === "Shift") shift_pressed = false;
+        if(e.key === "ArrowDown"){
+            if(activePage != "contact-page"){
+                activePage = nextPages[activePage];
+                scrollToElement(activePage)
+            }
+        }
+        if(e.key === "ArrowUp"){
+            if(activePage != "home-page"){
+                activePage = prevPages[activePage];
+                scrollToElement(activePage)
+            }
+        }
+    });
+
+    $("body").find(".about-block").eq(0).find(".about-content").eq(0).css("display", "grid");
 });
