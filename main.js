@@ -309,7 +309,11 @@ $(document).ready(function(){
     });
 
     $(".down-arrow").on("click", function(){
-        activePage = "about-page";
+        activePage = nextPages[activePage];
+        scrollToElement(activePage);
+    });
+    $(".up-arrow").on("click", function(){
+        activePage = prevPages[activePage];
         scrollToElement(activePage);
     });
 
