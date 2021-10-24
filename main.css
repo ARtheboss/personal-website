@@ -359,6 +359,9 @@ p{
 }
 
 .socials{
+    display: none;
+}
+.nav-menu.socials{
     display: block;
 }
 
