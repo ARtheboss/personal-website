@@ -359,7 +359,7 @@ p{
 }
 
 .socials{
-    display: none;
+    display: block;
 }
 
 @media (max-width:600px){
@@ -387,6 +387,7 @@ p{
     }
     .centered{
         height: fit-content;
+        top: 0;
     }
     .socials{
         display: inline;
@@ -412,7 +413,10 @@ p{
         min-height: 100%;
     }
     #home-page, #contact-page{
-        padding: 20vh 0;
+        padding: 35vh 0;
+    }
+    #about-page{
+        margin-bottom: 10vh;
     }
     .nav-menu{
         width: 100%;
@@ -427,7 +431,11 @@ p{
     .page-header .centered .name-letter{
         font-size: 8vh;
     }
+    .page-header .centered h1{
+        text-align: center;
+    }
     .page-header h3{
         font-size: 3vh;
+        text-align: center;
     }
 }
