@@ -1,4 +1,5 @@
 var totalWheelDelta = 0, justChanged = false;
+var activePage = "home-page";
 
 function scrollToElement(id, userInitiated=false){
     if(justChanged && userInitiated) return;
@@ -7,6 +8,13 @@ function scrollToElement(id, userInitiated=false){
     }, 500);
     justChanged = true;
     totalWheelDelta = 0;
+}
+
+function scrollToPortfolio(name){
+    activePage = "projects-page";
+    scrollToElement(activePage);
+    $(".about-content").css("display", "none");
+    $("#about-"+name).css("display", "");
 }
 
 const projectData = [
@@ -117,6 +125,8 @@ function showFront(i){
 
 $(document).ready(function(){
 
+    $(".about-content").css("display", "none");
+
     var projectHtml = "";
     projectData.forEach(function(data, i){
         /*
@@ -158,7 +168,7 @@ $(document).ready(function(){
         </div>
         `;
     });
-    $("#code-about-block").html(projectHtml);
+    $("#about-coder").html(projectHtml);
 
     var pages = [];
     $(".page").each(function(){
@@ -166,22 +176,21 @@ $(document).ready(function(){
     });
 
     $('h1').each(function(){ 
-        var text = $(this).text(), html = "";
+        var text = $(this).text(), html = "<div style='display: inline-block;'>";
         [...text].forEach(function(char){
-            if(char == " ") html += "<span class='name-letter' style='width: 10px;'></span>";
+            if(char == " ") html += "</div><span class='name-letter' style='width: 10px;'></span><div style='display: inline-block;'>";
             else html += "<span class='name-letter'>"+char+"</span>";
         });
-        $(this).html(html);
+        $(this).html(html+"</div>");
     });
 
-    var activePage = "home-page";
     scrollToElement(activePage);
     $(document).on("scroll", function(){
         var wh = $(window).height();
         $(".page").each(function(){
             var rect = $(this)[0].getBoundingClientRect();
             var id = "#" + $(this).attr('id').substring(0, $(this).attr('id').length - 5) + "-nav";
-            if(Math.abs(rect.top) < $(window).height() / 10 || (rect.bottom > $(window).height() / 10 && rect.bottom < wh)){
+            if(rect.top < wh/2 && wh/2 < rect.bottom){
                 $(id).addClass('active');
                 activePage = $(this).attr('id');
             }else{
@@ -300,7 +309,7 @@ $(document).ready(function(){
             }
             if(loop % 10 == 0) shooting_star_points.push({"x": Math.random() * 100 - 100, "y": Math.random() * 100 - 100})
             */
-            ctx.fillStyle = "white";
+            ctx.fillStyle = "#bbb";
             for(var i = 0; i < stars.length; i++){
                 if(stars[i].y < 0){
                     stars.splice(i, 1);
@@ -318,7 +327,7 @@ $(document).ready(function(){
 
     $(".about-block").on("click", function(){
         $(".about-content").css("display", "none");
-        $(this).find(".about-content").eq(0).css("display", "grid");
+        $(this).find(".about-content").eq(0).css("display", "");
     });
 
     $(".down-arrow").on("click", function(){
@@ -349,5 +358,5 @@ $(document).ready(function(){
         }
     });
 
-    $("body").find(".about-block").eq(0).find(".about-content").eq(0).css("display", "grid");
+    $("body").find(".about-block").eq(0).find(".about-content").eq(0).css("display", "");
 });
