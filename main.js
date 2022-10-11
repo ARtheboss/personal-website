@@ -24,6 +24,13 @@ const projectData = [
         "description": "Interviewed and obtained a paid internship during summer and worked on building data pipelines with Apache Airflow that pulled big data from APIs to be aggregated and presented in visual forms.",
     },
     {
+        "title": "GlobeSisters",
+        "position": "Software Engineeering Intern",
+        "link": "https://www.globesisters.com",
+        "image": "https://static.wixstatic.com/media/e4ff45_69d8a58f63364de1b9aaf2c7251dcfbd~mv2.png/v1/crop/x_0,y_0,w_586,h_267/fill/w_202,h_92,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e4ff45_69d8a58f63364de1b9aaf2c7251dcfbd~mv2.png",
+        "description": "GlobeSisters is an early-stage startup creating a safe homestay community for solo-woman travelers. I worked on the early version of the Flutter/Dart app with three developers."
+    },
+    {
         "title": "House SAS", 
         "link": "https://house-sas.com", 
         "image": "house-sas.png",
@@ -34,6 +41,12 @@ const projectData = [
         "link": "https://matrix.advayratan.com", 
         "image": "https://live.staticflickr.com/5225/5639214967_e37009d248_b.jpg",
         "description": "A feature-rich matrix calculator made in high school Linear Algebra. Includes 2D/3D visualizations, variable storage, parsing, and many different kinds of matrix functions (like RREF, eigenvectors, LU factorization etc.)",
+    },
+    {
+        "title": "3D Renderer", 
+        "link": "https://peg.advayratan.com", 
+        "image": "",
+        "description": "A basic 3D file renderer (.STL) I created from scratch for a high school geometry class project. I researched 3D projections onto 2D for screens and Quaternions for rotations.",
     },
     {
         "title": "Productive New Tab", 
