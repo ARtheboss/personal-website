@@ -279,6 +279,7 @@ canvas{
 .about-info-tile td{
     color: #2699de;
     font-family: 'Roboto', sans-serif;
+    padding: 0 2vw 0 0;
 }
 
 h1{
