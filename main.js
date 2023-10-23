@@ -19,6 +19,12 @@ function scrollToPortfolio(name){
 
 const projectData = [
     {
+        "title": "Berkeleytime", 
+        "link": "https://berkeleytime.com", 
+        "image": "https://berkeleytime.com/favicon.png",
+        "description": "Berkeley's leading course discovery platform. I'm working as a backend developer.",
+    },
+    {
         "title": "Time Trial Racing", 
         "link": "https://chrome.google.com/webstore/detail/time-trial-racing/phfhalhmobjblhoajagaeodhofnopcbm?hl=en", 
         "image": "https://lh3.googleusercontent.com/e0ONEoXMZO3cldgXZdZNKjkWVMFVZfeCUlfV4JYxuHHYdfE9H7nDf_fgudPZKMSngHVGvrgPVq4PpLueszD2v1rx9A=w128-h128-e365",
@@ -129,27 +135,6 @@ $(document).ready(function(){
 
     var projectHtml = "";
     projectData.forEach(function(data, i){
-        /*
-        projectHtml += `
-        <div class='card' id='`+i+`-card'>
-            <div class='card-front'>
-                <div class='card-header'>
-                    <a href='`+data['link']+`' target='_blank'>
-                        `+data['title']+`
-                        <br>
-                        <img class='card-image' src='`+data['image']+`'>
-                    </a>
-                </div>
-                <button class='card-button' onClick="showBack(`+i+`)">Details</button>
-            </div>
-            <div class='card-back'>
-                <div class='card-header'>
-                <a href='`+data['link']+`' target='_blank'>`+data['title']+`</a>
-                </div>
-                <div class='card-description'>`+data['description']+`</div>
-                <button class='card-button' onClick="showFront(`+i+`)">Back</button>
-            </div>
-        </div>`;*/
         projectHtml += `
         <div class='about-info-tile'>
         <span class='front'>
